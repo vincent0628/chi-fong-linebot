@@ -60,7 +60,7 @@ def handle_message(event):
         line_bot_api.reply_message(reply_token, image_message)
         return
 
-    line_bot_api.reply_message(reply_token, TextSendMessage(text=text, emojis=emoji))
+    # line_bot_api.reply_message(reply_token, TextSendMessage(text=text, emojis=emoji))
 
 
 if __name__ == "__main__":
