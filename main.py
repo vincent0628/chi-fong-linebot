@@ -44,7 +44,11 @@ def handle_message(event):
     text = message = event.message.text
     emoji = None
     interval = datetime.datetime.now() - datetime.datetime(2020, 7, 22)
-    if message in ["抽"]:
+    nums = message.count('抽')
+    if event.message.type == "sticker":
+        nums = 1
+    for i in range(nums):
+        print(nums)
         home = "1UZpmCCiUixC8BuWS4qHYAGgG9m3izMg0l0fjJesd7S0"
         good_luck = "1zspKEeTAQPsrHFpM0sjYotupwrX0JZFR6yi_3NGTTfc"
         if random.uniform(0, 1):
@@ -55,10 +59,9 @@ def handle_message(event):
         df = pandas.read_csv(URL)
         image_url_array = df[df.columns[4]].to_numpy()
         image_url = random.choice(image_url_array)
-        image_message = ImageSendMessage(original_content_url=image_url, preview_image_url=image_url)
-        
+        image_message = ImageSendMessage(original_content_url=image_url, preview_image_url=image_url)    
         line_bot_api.reply_message(reply_token, image_message)
-        return
+    return
 
     # line_bot_api.reply_message(reply_token, TextSendMessage(text=text, emojis=emoji))
 
