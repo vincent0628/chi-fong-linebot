@@ -44,11 +44,10 @@ def handle_message(event):
     text = message = event.message.text
     emoji = None
     interval = datetime.datetime.now() - datetime.datetime(2020, 7, 22)
-    nums = message.count('抽')
-    if event.message.type == "sticker":
-        nums = 1
+    nums = 1 if event.message.type == "sticker" else text.count('抽')
+    print(nums, event.message.type, text)
     for i in range(nums):
-        print(nums)
+        
         home = "1UZpmCCiUixC8BuWS4qHYAGgG9m3izMg0l0fjJesd7S0"
         good_luck = "1zspKEeTAQPsrHFpM0sjYotupwrX0JZFR6yi_3NGTTfc"
         if random.uniform(0, 1):
