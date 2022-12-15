@@ -4,7 +4,7 @@ services:
   env: python
   repo: https://github.com/vincent0628/chi-fong-linebot
   buildCommand: cd examples/flask-echo;pip install gunicorn -r requirements.txt
-  startCommand: cd examples/flask-echo;gunicorn app:app
+  startCommand: cd examples/flask-echo;gunicorn main:app
   plan: free
   autoDeploy: false
   envVars:

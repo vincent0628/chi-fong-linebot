@@ -1,2 +1,2 @@
-web: python3 main.py
-clock: python clock.py
+web: python3 main:app
+clock: python clock:app
