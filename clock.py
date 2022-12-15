@@ -5,7 +5,7 @@ sched = BlockingScheduler()
 
 # 防止睡眠
 def DoNotSleep():
-    url = "https://chi-fong.herokuapp.com/"
+    url = "https://line-bot-python-flask-97ly.onrender.com"
     r = requests.get(url)
 
 # 防止自動休眠

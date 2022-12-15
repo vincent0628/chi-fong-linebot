@@ -13,11 +13,11 @@ import pandas
 
 app = Flask(__name__)
 # LINE BOT info
-# line_bot_api = LineBotApi('Channel Access token')
-# handler = WebhookHandler('Channel Secret')
+line_bot_api = LineBotApi('Channel Access token')
+handler = WebhookHandler('Channel Secret')
 # https://developers.line.biz/console/channel/1657173822/basics
-line_bot_api = LineBotApi('uf06g9Y6nQPtl50MIzo0XlNc1bJdBwNsF2EUGYkuDcz3xB5obY/NWmjKymmgS0i8JMHoQ2FXQJwOlsPIcRrFWJoGe5M4upjt0XYc0p6t5D2vcenI9NgRtwqqH8p0TAAjVjz5fmwyW57AR+9UFaGZtQdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('b5987f3c74c321166ded1ba352df80f6')
+# line_bot_api = LineBotApi('uf06g9Y6nQPtl50MIzo0XlNc1bJdBwNsF2EUGYkuDcz3xB5obY/NWmjKymmgS0i8JMHoQ2FXQJwOlsPIcRrFWJoGe5M4upjt0XYc0p6t5D2vcenI9NgRtwqqH8p0TAAjVjz5fmwyW57AR+9UFaGZtQdB04t89/1O/w1cDnyilFU=')
+# handler = WebhookHandler('b5987f3c74c321166ded1ba352df80f6')
 
 
 @app.route("/callback", methods=['POST'])
