@@ -46,19 +46,19 @@ def handle_message(event):
     reply_token = event.reply_token
     text = message = event.message.text
     emoji = None
-    interval = datetime.datetime.now() - datetime.datetime(2020, 7, 22)
     nums = 1 if event.message.type == "sticker" else text.count('抽')
     print(nums, event.message.type, text)
     image_array = []
     if nums > 5:
         nums = 5
     for i in range(nums):
-        home = "1UZpmCCiUixC8BuWS4qHYAGgG9m3izMg0l0fjJesd7S0"
+        home = "1eYqQdaiqKc0A2qriRdX8rtXNbAHWHqD-Th6x5CNM3i0"
         good_luck = "1zspKEeTAQPsrHFpM0sjYotupwrX0JZFR6yi_3NGTTfc"
-        if random.uniform(0, 1):
-            googleSheetId = worksheetName = home
-        else:
-            googleSheetId = worksheetName = good_luck
+        googleSheetId = worksheetName = home
+        # if random.uniform(0, 1):
+        #     googleSheetId = worksheetName = home
+        # else:
+        #     googleSheetId = worksheetName = good_luck
         URL = 'https://docs.google.com/spreadsheets/d/{0}/gviz/tq?tqx=out:csv&sheet={1}'.format(googleSheetId, worksheetName)
         df = pandas.read_csv(URL)
         image_url_array = df[df.columns[4]].to_numpy()
